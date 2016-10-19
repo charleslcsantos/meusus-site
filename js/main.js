@@ -23,6 +23,17 @@
 
   MainController.$inject = ['$scope', '$filter', '$interval', '$http'];
 
-  angular.module('myApp', ['ui.mask']).controller('MainController', MainController);
+  angular.module('myApp', ['ui.mask', 'ui.router'])
+  .controller('MainController', MainController)
+  .config(function($stateProvider, $urlRouterProvider) {
+    var homeState = {
+      name: 'home',
+      url: '/',
+      templateUrl: 'template/home.html'
+    }
+
+    $stateProvider.state(homeState);
+    $urlRouterProvider.otherwise('/');
+  });
 
 })();
