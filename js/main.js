@@ -32,13 +32,21 @@
       templateUrl: 'template/home.html'
     };
 
-    var resultState = {
+    var resultadoState = {
       name: 'result',
-      url: '/',
+      url: '/resultado',
       templateUrl: 'template/result.html'
+    }
+    
+    var detalheState = {
+      name: 'detalhe',
+      url: '/detalhe',
+      templateUrl: 'template/detalhe.html'
     }
 
     $stateProvider.state(homeState);
+    $stateProvider.state(resultadoState);
+    $stateProvider.state(detalheState);
     $urlRouterProvider.otherwise('/');
   });
 
