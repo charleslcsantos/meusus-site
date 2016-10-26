@@ -19,23 +19,25 @@
       controlelrAs: 'homeCtrl'
     };
 
-    var unidadeState = {
-      url: '/unidades/:keywords/:coods',
-      templateUrl: 'template/Unidades.html',
+    var unidadesState = {
+      // url: '/unidades/:keywords/:coods',
+      url: '/unidades',
+      templateUrl: 'template/unidadesView.html',
       controller: 'UnidadesController',
       controllerAs: 'unidadeCtrl'
     };
 
-    var unidadeDetalheState = {
-      url: '/unidades/:descricao/:bairro/:cidade/:uf/:id',
-      templateUrl: 'template/unidadeDetalheView.html',
-      controller: 'UnidadeDetalheController',
+    var unidadeDetalhesState = {
+      // url: '/unidades/:descricao/:bairro/:cidade/:uf/:id',
+      url: '/unidade',
+      templateUrl: 'template/unidadeDetalhesView.html',
+      controller: 'UnidadeDetalhesController',
       controllerAs: 'unidadeDetalheCtrl'
     };
 
     $stateProvider.state('home', homeState);
-    $stateProvider.state('unidade', unidadeState)
-    $stateProvider.state('unidadeDetail', unidadeState);
+    $stateProvider.state('unidades', unidadesState)
+    $stateProvider.state('unidadeDetalhes', unidadeDetalhesState);
 
     $urlRouterProvider.otherwise('/');
   });

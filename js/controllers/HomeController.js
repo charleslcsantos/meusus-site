@@ -12,7 +12,7 @@
 
     vm.submitForm = function () {
       var params = { keywords: vm.keywords, coords: vm.coords };
-      $state.go('results', params)
+      $state.go('unidades', params)
     };
   };
 
