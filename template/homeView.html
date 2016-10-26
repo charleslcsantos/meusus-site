@@ -1,7 +1,13 @@
 <div class="flex-container home">
   <img src="img/logo.png" alt="Logo MeuSUS">
-  <form name="searchForm" novalidate>
-    <input type="text" class="ms-input search" name="keyword" ng-model="homeCtrl.keyword" placeholder="Palavra-chave" required autofocus>
-    <button type="submit" class="ms-btn" ng-click="homeCtrl.submitForm()" ng-disabled="searchForm.$invalid">Buscar</button>
+  <form name="searchForm" novalidate ng-submit="homeCtrl.submitForm()">
+    <input type="text" class="ms-input search" name="keywords" placeholder="Palavra-chave" required autofocus
+    ng-model="homeCtrl.keywords">
+    <button type="submit" class="ms-btn" 
+      ng-disabled="searchForm.$invalid">
+      Buscar
+    </button>
   </form>
+
+  <a ui-sref="unidades({keywords: 'teste'})">TESTE</a>
 </div>

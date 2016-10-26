@@ -11,7 +11,7 @@
     vm.coords = { lat: null, lng: null }
 
     vm.submitForm = function () {
-      var params = { keywords: vm.keywords, coords: vm.coords };
+      var params = { keywords: vm.keywords };
       $state.go('unidades', params)
     };
   };

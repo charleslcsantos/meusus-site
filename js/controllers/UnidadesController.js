@@ -1,7 +1,9 @@
 (function () {
 
-  function unidadesController ($state, $stateParams, apiService) {
+  function unidadesController ($state, $stateParams, apiService, $location) {
     var vm = this;
+
+    console.log($stateParams);
 
     vm.keywords = $stateParams.keywords;
     vm.coords = $stateParams.coords;
@@ -32,7 +34,7 @@
     }
   };
 
-  unidadesController.$inject = ['$state', '$stateParams', 'apiService'];
+  unidadesController.$inject = ['$state', '$stateParams', 'apiService', '$location'];
 
   angular.module('meusus.controllers').controller('UnidadesController', unidadesController);
 

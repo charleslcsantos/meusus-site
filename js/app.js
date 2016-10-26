@@ -10,33 +10,33 @@
     'meusus.directives',
     'meusus.controllers'
   ])
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
+    
+    // $locationProvider.html5Mode(true);
 
     var homeState = {
       url: '/',
       templateUrl: 'template/homeView.html',
       controller: 'HomeController',
-      controlelrAs: 'homeCtrl'
+      controllerAs: 'homeCtrl'
     };
 
     var unidadesState = {
-      // url: '/unidades/:keywords/:coods',
-      url: '/unidades',
+      url: '/unidades/{keywords}',
       templateUrl: 'template/unidadesView.html',
       controller: 'UnidadesController',
       controllerAs: 'unidadeCtrl'
     };
 
     var unidadeDetalhesState = {
-      // url: '/unidades/:descricao/:bairro/:cidade/:uf/:id',
-      url: '/unidade',
+      url: '/unidade/{descricao}/{bairro}/{cidade}/{uf}/{id}',
       templateUrl: 'template/unidadeDetalhesView.html',
       controller: 'UnidadeDetalhesController',
       controllerAs: 'unidadeDetalheCtrl'
     };
 
     $stateProvider.state('home', homeState);
-    $stateProvider.state('unidades', unidadesState)
+    $stateProvider.state('unidades', unidadesState);
     $stateProvider.state('unidadeDetalhes', unidadeDetalhesState);
 
     $urlRouterProvider.otherwise('/');
