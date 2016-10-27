@@ -18,17 +18,11 @@
     };
 
     vm.submitForm = function () {
-      vm.init(vm.keywords);
+      $state.go('unidades', { q: vm.keywords });
     };
-
-    vm.detail = function (establishment) {
-      $state.go('unit', { establishment: establishment });
-    }
 
     if ($stateParams.keywords) {
       vm.init($stateParams.keywords);
-    } else {
-      // $state.go('home');
     }
   };
 

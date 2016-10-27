@@ -19,12 +19,8 @@
     };
 
     vm.submitForm = function () {
-      vm.init(vm.keywords);
-    };
-
-    vm.detail = function (establishment) {
       $state.go('unidades', { q: vm.keywords });
-    }
+    };
 
     if ($stateParams.q) {
       vm.init($stateParams.q);

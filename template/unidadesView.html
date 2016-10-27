@@ -2,8 +2,13 @@
     <div class="topo">
         <a class="logo" ui-sref="home"></a>
         <div class="search-bar">
-            <input type="text" class="ms-input search" name="keyword" ng-model="unidadeCtrl.keywords" placeholder="Palavra-chave" required>
-            <a href="" class="ms-btn" ng-click="c.submitForm()" ng-disabled="searchForm.$invalid">Buscar</a>
+            <form name="searchForm" ng-submit="unidadeCtrl.submitForm()">
+                <input type="text" class="ms-input search" name="keyword" ng-model="unidadeCtrl.keywords" placeholder="Palavra-chave" required>
+                <button type="submit" class="ms-btn"
+                    ng-disabled="searchForm.$invalid">
+                    Buscar
+                </button>
+            </form>
         </div>
     </div>
     <div class="search-result">
@@ -11,7 +16,7 @@
             <span>Foram encontrados <strong>{{ unidadeCtrl.establishments.length }}</strong> registros.</span>
             <div class="result-type">
                 <input type="radio" name="result_type" id="type_1" value="lsita" checked><label for="type_1"> Lista</label>
-                <input type="radio" name="result_type" id="type_2" value="mapa"><label for="type_1"> Mapa</label>
+                <input type="radio" name="result_type" id="type_2" value="mapa"><label for="type_2"> Mapa</label>
             </div>
         </header>
         <div class="content">
