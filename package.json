@@ -18,6 +18,7 @@
     "gulp-strip-css-comments": "^1.2.0"
   },
   "dependencies": {
+    "angular-slugify": "^1.0.3",
     "angular-ui-mask": "^1.8.6",
     "angular-ui-router": "^0.3.1"
   }

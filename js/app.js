@@ -8,10 +8,11 @@
     'meusus.services',
     'meusus.filters',
     'meusus.directives',
-    'meusus.controllers'
+    'meusus.controllers',
+    'slugifier'
   ])
   .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
-    
+
     // $locationProvider.html5Mode(true);
 
     var homeState = {
@@ -22,14 +23,14 @@
     };
 
     var unidadesState = {
-      url: '/unidades/{keywords}',
+      url: '/unidades?q&coords',
       templateUrl: 'template/unidadesView.html',
       controller: 'UnidadesController',
       controllerAs: 'unidadeCtrl'
     };
 
     var unidadeDetalhesState = {
-      url: '/unidade/{descricao}/{bairro}/{cidade}/{uf}/{id}',
+      url: '/unidade/{descricao}/{bairro}/{cidade}/{uf}',
       templateUrl: 'template/unidadeDetalhesView.html',
       controller: 'UnidadeDetalhesController',
       controllerAs: 'unidadeDetalheCtrl'

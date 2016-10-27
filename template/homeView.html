@@ -3,11 +3,9 @@
   <form name="searchForm" novalidate ng-submit="homeCtrl.submitForm()">
     <input type="text" class="ms-input search" name="keywords" placeholder="Palavra-chave" required autofocus
     ng-model="homeCtrl.keywords">
-    <button type="submit" class="ms-btn" 
+    <button type="submit" class="ms-btn"
       ng-disabled="searchForm.$invalid">
       Buscar
     </button>
   </form>
-
-  <a ui-sref="unidades({keywords: 'teste'})">TESTE</a>
 </div>
