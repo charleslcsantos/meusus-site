@@ -20,6 +20,8 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+    padding-bottom: 30vh;
+    box-sizing: border-box;
 		img {
 			width: 150px;
 			height: 150px;
@@ -102,6 +104,7 @@ body {
 			padding: 11px;
 		}
 	}
+
 	.detail {
 		padding-top: 75px;
 		background: #EDF0F1;

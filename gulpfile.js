@@ -25,14 +25,15 @@ gulp.task('browser-sync', function () {
 
     browsersync.init({
         port: 3000,
+        open: false,
         server: {
           baseDir: './'
         }
     });
 });
 
-gulp.task('default',function() {
-	runsequence('sass', 'browser-sync');
+gulp.task('default', ['sass', 'browser-sync'], function() {
   gulp.watch('css/style.scss',['sass']);
-  gulp.watch('index.html').on('change', browsersync.reload);
+  // gulp.watch('index.html').on('change', browsersync.reload);
+  // gulp.watch('**/*.js').on('change', browsersync.reload);
 });

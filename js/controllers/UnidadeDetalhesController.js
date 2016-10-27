@@ -1,6 +1,6 @@
 (function () {
 
-  function resultsController ($state, $stateParams, apiService) {
+  function unidadeDetalhesController ($state, $stateParams, apiService) {
     var vm = this;
 
     vm.keywords = $stateParams.keywords;
@@ -28,12 +28,12 @@
     if ($stateParams.keywords) {
       vm.init($stateParams.keywords);
     } else {
-      $state.go('home');
+      // $state.go('home');
     }
   };
 
-  resultsController.$inject = ['$state', '$stateParams', 'apiService'];
+  unidadeDetalhesController.$inject = ['$state', '$stateParams', 'apiService'];
 
-  angular.module('meusus.controllers').controller('ResultsController', resultsController);
+  angular.module('meusus.controllers').controller('UnidadeDetalhesController', unidadeDetalhesController);
 
 })();

@@ -1,5 +1,9 @@
 (function () {
 
+  angular.module('meusus.controllers').controller('HomeController', homeController);
+
+  homeController.$inject = ['$state'];
+
   function homeController ($state) {
     var vm = this;
 
@@ -7,13 +11,9 @@
     vm.coords = { lat: null, lng: null }
 
     vm.submitForm = function () {
-      var params = { keywords: vm.keywords, coords: vm.coords };
-      $state.go('results', params)
+      var params = { keywords: vm.keywords };
+      $state.go('unidades', params)
     };
   };
-
-  homeController.$inject = ['$state'];
-
-  angular.module('meusus.controllers').controller('HomeController', homeController);
 
 })();
