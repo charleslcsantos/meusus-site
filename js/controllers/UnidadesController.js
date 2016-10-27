@@ -3,9 +3,7 @@
   function unidadesController ($state, $stateParams, apiService, $location) {
     var vm = this;
 
-    console.log($stateParams);
-
-    vm.keywords = $stateParams.keywords;
+    vm.keywords = $stateParams.q;
     vm.coords = $stateParams.coords;
     vm.establishments = [];
 
@@ -14,6 +12,7 @@
       req.then(function (response) {
         console.log(response);
         vm.establishments = response.data;
+        console.log(vm.establishments[0]);
       }, function (err) {
         console.error(err);
       });
@@ -24,13 +23,11 @@
     };
 
     vm.detail = function (establishment) {
-      $state.go('unit', { establishment: establishment });
+      $state.go('unidades', { q: vm.keywords });
     }
 
-    if ($stateParams.keywords) {
-      vm.init($stateParams.keywords);
-    } else {
-      // $state.go('home');
+    if ($stateParams.q) {
+      vm.init($stateParams.q);
     }
   };
 

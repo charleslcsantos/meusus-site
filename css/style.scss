@@ -30,8 +30,11 @@ body {
 	}
 
 	.result {
+    min-height: 100vh;
 		padding-top: 65px;
+    padding-bottom: 20px;
 		background: #EDF0F1;
+    box-sizing: border-box;
 		.topo {
 			background: #00B7CE;
 			border-bottom: 5px solid #03A1B5;
