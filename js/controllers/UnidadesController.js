@@ -22,6 +22,17 @@
       $state.go('unidades', { q: vm.keywords });
     };
 
+    vm.endereco = function (u) {
+      var endereco = [];
+
+      angular.forEach(Object.keys(u.obj.endereco), function (key, i) {
+        if (key != 'municipio' && u.obj.endereco[key])
+          endereco.push(u.obj.endereco[key])
+      });
+
+      return endereco.join(', ');
+    };
+
     if ($stateParams.q) {
       vm.init($stateParams.q);
     }

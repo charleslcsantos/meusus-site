@@ -1,9 +1,14 @@
 <div class="detail">
     <div class="topo">
-        <div class="logo"></div>
+        <a class="logo" ui-sref="home"></a>
         <div class="search-bar">
-            <input type="text" class="ms-input search" name="keyword" ng-model="keyword" placeholder="Palavra-chave" required>
-            <a href="" class="ms-btn" ng-click="c.submitForm()" ng-disabled="searchForm.$invalid">Buscar</a>
+            <form name="searchForm" ng-submit="unidadeDetalheCtrl.submitForm()">
+                <input type="text" class="ms-input search" name="keyword" ng-model="unidadeDetalheCtrl.keywords" placeholder="Palavra-chave" required>
+                <button type="submit" class="ms-btn"
+                    ng-disabled="searchForm.$invalid">
+                    Buscar
+                </button>
+            </form>
         </div>
     </div>
     <div class="info">

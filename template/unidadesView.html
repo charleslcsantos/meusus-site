@@ -30,6 +30,7 @@
                 ng-repeat="establishment in unidadeCtrl.establishments">
                 <div class="info">
                     <h3>{{ establishment.unidade }}</h3>
+                    <p>{{ unidadeCtrl.endereco(establishment) }}</p>
                     <p>Serviços: Ortopedia, Nutrição, Exames</p>
                     <p>Telefone: {{ establishment.obj.nuTelefone }}</p>
                 </div>
