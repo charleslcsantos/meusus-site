@@ -3,15 +3,17 @@
   function unidadeDetalhesController ($state, $stateParams, apiService) {
     var vm = this;
 
-    vm.keywords = $stateParams.keywords;
-    vm.coords = $stateParams.coords;
-    vm.establishments = [];
+    console.log($stateParams);
 
-    vm.init = function (keywords) {
-      var req = apiService.establishments.GET({keyword: keywords});
+    vm.keywords = $stateParams.q;
+    vm.coords = $stateParams.coords;
+    vm.establishment = null;
+
+    vm.init = function (id) {
+      var req = apiService.establishments.GET(id);
       req.then(function (response) {
-        console.log(response);
-        vm.establishments = response.data;
+        vm.establishment = response.data;
+        console.log(vm.establishment);
       }, function (err) {
         console.error(err);
       });
@@ -21,8 +23,19 @@
       $state.go('unidades', { q: vm.keywords });
     };
 
-    if ($stateParams.keywords) {
-      vm.init($stateParams.keywords);
+    vm.endereco = function (u) {
+      var endereco = [];
+
+      angular.forEach(Object.keys(u.endereco), function (key, i) {
+        if (key != 'municipio' && u.endereco[key])
+          endereco.push(u.endereco[key])
+      });
+
+      return endereco.join(', ');
+    };
+
+    if ($stateParams.id) {
+      vm.init($stateParams.id);
     }
   };
 

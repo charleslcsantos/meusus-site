@@ -9,9 +9,15 @@
     self.establishments = { endpoint: '/establishments' };
     self.establishments.GET = function (params) {
       var endpoint = urlBase + self.establishments.endpoint;
+
+      if (typeof params === 'string') {
+        endpoint += '/' + params;
+      }
+
       if (typeof params === 'object') {
         config.params = params
       }
+
       return $http.get(endpoint, config);
     };
   };

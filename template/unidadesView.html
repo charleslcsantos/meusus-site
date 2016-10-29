@@ -25,7 +25,9 @@
                     'descricao': (establishment.unidade | slugify),
                     'bairro': (establishment.obj.endereco.bairro | slugify),
                     'cidade': (establishment.obj.endereco.nomeMunicipio | slugify),
-                    'uf': (establishment.obj.endereco.estado | slugify)
+                    'uf': (establishment.obj.endereco.estado | slugify),
+                    'id': establishment.obj._id,
+                    'q': unidadeCtrl.keywords
                 })"
                 ng-repeat="establishment in unidadeCtrl.establishments">
                 <div class="info">

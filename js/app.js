@@ -30,7 +30,7 @@
     };
 
     var unidadeDetalhesState = {
-      url: '/unidade/{descricao}/{bairro}/{cidade}/{uf}',
+      url: '/unidade/{descricao}/{bairro}/{cidade}/{uf}/{id}?q&coords',
       templateUrl: 'template/unidadeDetalhesView.html',
       controller: 'UnidadeDetalhesController',
       controllerAs: 'unidadeDetalheCtrl'
