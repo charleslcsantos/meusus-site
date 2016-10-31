@@ -17,10 +17,18 @@
         <p>Telefone: {{ unidadeDetalheCtrl.establishment.nuTelefone }}</p>
 
         <div class="services">
-            <h4>Serviços Especializados</h4>
+            <h4>Serviços especializados</h4>
             <ul>
                 <li class="service"
                     ng-repeat="s in unidadeDetalheCtrl.establishment.servicosEspecializados">
+                    <a href="">{{ s.dsServico }}</a>
+                </li>
+            </ul>
+            
+            <h4>Outros serviços</h4>
+            <ul>
+                <li class="service"
+                    ng-repeat="s in unidadeDetalheCtrl.establishment.servicosClassificacao">
                     <a href="">{{ s.dsServico }}</a>
                 </li>
             </ul>
