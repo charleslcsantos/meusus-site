@@ -13,7 +13,7 @@
   ])
   .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
     var homeState = {
       url: '/',
