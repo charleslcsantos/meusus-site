@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+  font-size: 100%;
 }
 
 a {
@@ -10,6 +11,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
+
 	.flex-container.home {
 		height: 100%;
 		min-height: 100%;
@@ -50,10 +52,21 @@ body {
 				display: inline-block;
 				background-image: url('../img/logo.png');
 				background-size: cover;
+        background-repeat: no-repeat;
 			}
 			.search-bar {
 				padding: 10px 0;
 				display: inline-block;
+        @media (max-width: 480px) {
+          width: 75%;
+          padding: 10px 10px 10px 0;
+          .ms-input.search {
+            width: 74%;
+          }
+        }
+        @media (max-width: 320px) {
+          width: 70%;
+        }
 			}
 		}
 		.search-result {
@@ -74,6 +87,11 @@ body {
 			.content {
 				width: 760px;
 				margin: 0 auto;
+
+        @media (max-width: 768px) {
+          width: 90%;
+        }
+
 				.card {
 					display: block;
 					margin: 10px 0;
@@ -103,9 +121,6 @@ body {
 				}
 			}
 		}
-		.ms-input.search {
-			padding: 11px;
-		}
 	}
 
 	.detail {
@@ -127,10 +142,21 @@ body {
 				display: inline-block;
 				background-image: url('../img/logo.png');
 				background-size: cover;
+        background-repeat: no-repeat;
 			}
 			.search-bar {
 				padding: 10px 0;
 				display: inline-block;
+        @media (max-width: 480px) {
+          width: 75%;
+          padding: 10px 10px 10px 0;
+          .ms-input.search {
+            width: 74%;
+          }
+        }
+        @media (max-width: 320px) {
+          width: 70%;
+        }
 			}
 		}
 		.info {
@@ -173,7 +199,7 @@ body {
 						a {
 							color: #FFF;
 						}
-						
+
 						&.others {
 							background: #E4E4E4;
 							a {
@@ -191,14 +217,24 @@ body {
 }
 
 .ms-input.search {
-	background: rgba(255,255,255,0.90);
-	padding: 9px 10px 10px;
 	width: 300px;
-	border-radius: 5px;
-	box-shadow: none;
-	color: #888888;
-	border: none;
+  height: 35px;
+  padding: 10px;
 	font-weight: bold;
+  background: rgba(255,255,255, .90);
+  border: none;
+  border-radius: 5px;
+	box-shadow: none;
+  box-sizing: border-box;
+	color: #888888;
+
+  @media (max-width: 420px) {
+    width: 220px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 }
 .ms-btn {
 	background: #ADC0C3;
