@@ -3,8 +3,6 @@
   function unidadeDetalhesController ($state, $stateParams, apiService) {
     var vm = this;
 
-    console.log($stateParams);
-
     vm.keywords = $stateParams.q;
     vm.coords = $stateParams.coords;
     vm.establishment = null;

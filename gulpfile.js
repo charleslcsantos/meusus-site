@@ -13,7 +13,7 @@ gulp.task('sass', function(){
   console.log("Salvando em: "+ 'css/style.css');
   console.log('----------------------');
 
-  return gulp.src('css/style.scss')
+  return gulp.src('css/*')
   	.pipe(sourcemaps.init())
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
   	.pipe(sourcemaps.write())
@@ -33,7 +33,7 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('default', ['sass', 'browser-sync'], function() {
-  gulp.watch('css/style.scss',['sass']);
+  gulp.watch('css/*',['sass']);
   // gulp.watch('index.html').on('change', browsersync.reload);
   // gulp.watch('**/*.js').on('change', browsersync.reload);
 });
