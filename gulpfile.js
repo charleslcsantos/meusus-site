@@ -24,11 +24,11 @@ gulp.task('sass', function(){
 gulp.task('browser-sync', function () {
 
     browsersync.init({
-        port: 3000,
         open: false,
-        server: {
-          baseDir: './'
-        }
+        // server: {
+        //   baseDir: './'
+        // }
+        proxy: 'localhost:3006'
     });
 });
 

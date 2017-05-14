@@ -2,7 +2,7 @@
 
   function apiService ($http) {
     var self = this;
-
+    
     // var urlBase = 'http://127ag.com.br:3002';
     var urlBase = 'http://localhost:3002';
     var config = { headers: { 'Content-Type': 'application/json' } };

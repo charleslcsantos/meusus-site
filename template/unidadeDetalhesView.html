@@ -24,12 +24,12 @@
                     <a ng-href="#/unidades?q={{s.dsServico}}">{{ s.dsServico }}</a>
                 </li>
             </ul>
-            
+
             <h4>Outros serviços</h4>
             <ul>
                 <li class="service others"
                     ng-repeat="s in unidadeDetalheCtrl.establishment.servicosClassificacao">
-                    <a ng-href="#/unidades?q={{s.dsServico}}">{{ s.dsServico }}</a>
+                    <a ui-sref="unidades({ 'q': s.dsServico })">{{ s.dsServico }}</a>
                 </li>
             </ul>
         </div>

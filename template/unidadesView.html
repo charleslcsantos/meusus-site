@@ -33,7 +33,12 @@
                 <div class="info">
                     <h3>{{ establishment.unidade }}</h3>
                     <p>{{ unidadeCtrl.endereco(establishment) }}</p>
-                    <p>Serviços: Ortopedia, Nutrição, Exames</p>
+                    <p>
+                        Serviços: <!-- Ortopedia, Nutrição, Exames -->
+                        <span ng-repeat="servico in establishment.obj.servicosEspecializados">
+                            {{ servico.dsServico }}
+                        </span>
+                    </p>
                     <p>Telefone: {{ establishment.obj.nuTelefone }}</p>
                 </div>
             </a>
