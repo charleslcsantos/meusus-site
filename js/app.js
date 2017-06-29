@@ -11,9 +11,11 @@
     'meusus.controllers',
     'slugifier'
   ])
-  .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
+  .config(function($logProvider, $compileProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
 
-    // $locationProvider.html5Mode(true);
+    $logProvider.debugEnabled(false);
+    $compileProvider.debugInfoEnabled(false);
+    $locationProvider.html5Mode(true);
 
     var homeState = {
       url: '/',

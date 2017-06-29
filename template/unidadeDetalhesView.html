@@ -17,19 +17,19 @@
         <p>Telefone: {{ unidadeDetalheCtrl.establishment.nuTelefone }}</p>
 
         <div class="services">
-            <h4>Serviços especializados</h4>
+            <h4>Serviços especializados disponíveis nesta unidade</h4>
             <ul>
                 <li class="service"
-                    ng-repeat="s in unidadeDetalheCtrl.establishment.servicosEspecializados">
+                    ng-repeat="s in unidadeDetalheCtrl.establishment.servicosEspecializados | orderBy: 'dsServico'">
                     <a ng-href="#/unidades?q={{s.dsServico}}">{{ s.dsServico }}</a>
                 </li>
             </ul>
-            
+
             <h4>Outros serviços</h4>
             <ul>
                 <li class="service others"
                     ng-repeat="s in unidadeDetalheCtrl.establishment.servicosClassificacao">
-                    <a ng-href="#/unidades?q={{s.dsServico}}">{{ s.dsServico }}</a>
+                    <a ui-sref="unidades({ 'q': s.dsServico })">{{ s.dsServico }}</a>
                 </li>
             </ul>
         </div>
