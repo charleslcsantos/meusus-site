@@ -8,12 +8,15 @@
     vm.establishment = null;
 
     vm.init = function (id) {
+      var loader = document.getElementsByClassName('loader')[0];
+      loader.className = 'loader';
       var req = apiService.establishments.GET(id);
       req.then(function (response) {
         vm.establishment = response.data;
-        console.log(vm.establishment);
+        loader.className = 'loader hide';
       }, function (err) {
         console.error(err);
+        loader.className = 'loader hide';
       });
     };
 

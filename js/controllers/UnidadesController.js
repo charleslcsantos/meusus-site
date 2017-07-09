@@ -8,12 +8,14 @@
     vm.establishments = [];
 
     vm.init = function (keywords) {
+      var loader = document.getElementsByClassName('loader')[0];
+      loader.className = 'loader';
       var req = apiService.establishments.GET({keyword: keywords});
       req.then(function (response) {
-        console.log(response);
         vm.establishments = response.data;
-        console.log(vm.establishments[0]);
+        loader.className = 'loader hide';
       }, function (err) {
+        loader.className = 'loader hide';
         console.error(err);
       });
     };
