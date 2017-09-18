@@ -6,7 +6,7 @@ function MainController ($scope, $filter, $interval, $http) {
     if($scope.keyword) {
       $http({
         method: 'GET',
-        url: 'http://127ag.com.br:3002/establishments?keyword='+ $scope.keyword
+        url: 'http://127ag.com.br:3003/establishments?keyword='+ $scope.keyword
       }).then(function successCallback(response) {
         console.log(response)
       }, function errorCallback(response) {
