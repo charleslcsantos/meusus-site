@@ -3,8 +3,8 @@
   function apiService ($http) {
     var self = this;
     
-    // var urlBase = 'http://127ag.com.br:3002';
-    var urlBase = 'http://beta.api.meusus.com';
+    var urlBase = 'http://localhost:3002';
+    // var urlBase = 'http://beta.api.meusus.com';
     var config = { headers: { 'Content-Type': 'application/json' } };
 
     self.establishments = { endpoint: '/establishments' };

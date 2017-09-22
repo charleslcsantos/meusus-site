@@ -27,9 +27,9 @@
     vm.endereco = function (u) {
       var endereco = [];
 
-      angular.forEach(Object.keys(u.obj.endereco), function (key, i) {
-        if (key != 'municipio' && u.obj.endereco[key])
-          endereco.push(u.obj.endereco[key])
+      angular.forEach(Object.keys(u.endereco), function (key, i) {
+        if (key != 'municipio' && u.endereco[key])
+          endereco.push(u.endereco[key])
       });
 
       return endereco.join(', ');

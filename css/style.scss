@@ -64,34 +64,35 @@ body {
 				ul {
 					list-style: none;
 					padding: 0;
-					li.service {
-						display: inline-block;
-						font-size: 9px;
-						padding: 5px 10px;
-						margin: 2px;
-						background: #926FB5;
-						color: white;
-						border-radius: 5px;
-						transition: all ease .3s;
-						&:hover {
-							background: darken(#926FB5, 10%);
-						}
-						a {
-							color: #FFF;
-						}
-						
-						&.others {
-							background: #E4E4E4;
-							a {
-								color: #797979;
-							}
-							&:hover {
-								background: darken(#E4E4E4, 10%);
-							}
-						}
-					}
 				}
 			}
+		}
+	}
+}
+
+.service {
+	display: inline-block;
+	font-size: 9px;
+	padding: 5px 10px;
+	margin: 2px;
+	background: #926FB5;
+	color: white;
+	border-radius: 5px;
+	transition: all ease .3s;
+	&:hover {
+		background: darken(#926FB5, 10%);
+	}
+	a {
+		color: #FFF;
+	}
+	
+	&.others {
+		background: #E4E4E4;
+		a {
+			color: #797979;
+		}
+		&:hover {
+			background: darken(#E4E4E4, 10%);
 		}
 	}
 }

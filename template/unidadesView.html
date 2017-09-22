@@ -29,17 +29,16 @@
                     'id': establishment.obj._id,
                     'q': unidadeCtrl.keywords
                 })"
-                ng-repeat="establishment in unidadeCtrl.establishments">
+                ng-repeat="e in unidadeCtrl.establishments | orderBy: 'nomeFantasia'">
                 <div class="info">
-                    <h3>{{ establishment.unidade }}</h3>
-                    <p>{{ unidadeCtrl.endereco(establishment) }}</p>
+                    <h3>{{ e.nomeFantasia }}</h3>
+                    <p>{{ unidadeCtrl.endereco(e) }}</p>
+                    <p>Telefone: {{ e.nuTelefone }}</p>
                     <p>
-                        Serviços: <!-- Ortopedia, Nutrição, Exames -->
-                        <span ng-repeat="servico in establishment.obj.servicosEspecializados">
-                            {{ servico.dsServico }}
+                        <span class="service" ng-repeat="servico in e.servicosConsultados">
+                            {{ servico }}
                         </span>
                     </p>
-                    <p>Telefone: {{ establishment.obj.nuTelefone }}</p>
                 </div>
             </a>
         </div>
