@@ -1,0 +1,18 @@
+.search-input	{
+	input {
+		display: block;
+	}
+	input[type="text"] {
+		font-size: 16px;
+		padding: 15px 10px 10px;
+		border: none;
+		border-bottom: 1px solid #d8d8d8;
+		text-align: center;
+		outline: 0;
+		transition: all ease .2s;
+		&:focus {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+}

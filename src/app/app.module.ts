@@ -3,13 +3,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import {TransferHttpCacheModule} from '@nguniversal/common';
+import { HomeComponent } from './pages/home/home.component';
+import { SearchInputComponent } from './shared/search-input/search-input.component';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SearchInputComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
