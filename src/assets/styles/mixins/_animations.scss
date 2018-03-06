@@ -1,0 +1,8 @@
+@mixin fade-animation-show {
+	visibility: visible;
+  opacity: 1;
+}
+@mixin fade-animation-hidden {
+  visibility: hidden;
+  opacity: 0;
+}

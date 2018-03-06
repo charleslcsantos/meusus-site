@@ -1,8 +1,13 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins/helpers';
+
 .search-input	{
 	input {
 		display: block;
 	}
 	input[type="text"] {
+		color: $color_primary;
+		width: 250px;
 		font-size: 16px;
 		padding: 15px 10px 10px;
 		border: none;
@@ -10,9 +15,20 @@
 		text-align: center;
 		outline: 0;
 		transition: all ease .2s;
+		letter-spacing: 0.06em;
+		@include input-placeholder {
+			color: #d2d2d2;
+		}
 		&:focus {
 			padding-left: 25px;
 			padding-right: 25px;
+			// width: 400px;
 		}
+	}
+	.btn {
+		font-size: 15px;
+		margin: 15px auto;
+		padding: 10px 40px;
+		font-weight: 100;
 	}
 }
