@@ -1,5 +1,5 @@
 <div class="search-input">
-  <input type="text" placeholder="Digite um serviço ou unidade">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Digite um serviço ou unidade">
   <p>Buscar em: <a href="javascript:;">Salvador</a></p>
-  <input type="button" class="btn btn-primary" value="Buscar">
+  <input type="button" class="btn btn-primary" (click)="search()" value="Buscar">
 </div>
