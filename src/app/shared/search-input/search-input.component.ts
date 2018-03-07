@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { GeoLocationService } from '../../services/utils/geo-location.service';
 
 @Component({
   selector: '[app-search-input]',
@@ -7,9 +8,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchInputComponent implements OnInit {
+  public location = '';
   public searchTerm = '';
 
-  constructor() { }
+  constructor(
+    private geoLocationService: GeoLocationService
+  ) {
+    this.geoLocationService.getBrowserLocation().subscribe((location) => {
+      this.geoLocationService.location = location;
+      this.geoLocationService.getLocationByLatLng(location.latitude, location.longitude).subscribe((res) => {
+        this.location = res;
+      });
+    });
+  }
 
   ngOnInit() {
   }
