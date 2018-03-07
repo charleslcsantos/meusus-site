@@ -8,7 +8,8 @@
 	}
 	input[type="text"] {
 		color: $color_primary;
-		width: 250px;
+		width: 100%;
+		min-width: 200px;
 		padding: 15px 10px 10px;
 		border: none;
 		border-bottom: 1px solid #d8d8d8;
@@ -23,6 +24,17 @@
 			padding-left: 25px;
 			padding-right: 25px;
 			// width: 400px;
+		}
+	}
+	p {
+		font-size: 12px;
+		a {
+			font-weight: 800;
+			color: #48b9ce;
+			text-decoration: none;
+			margin-left: 5px;
+			border-bottom: 1px solid;
+			padding: 0 15px 2px;
 		}
 	}
 	.btn {
