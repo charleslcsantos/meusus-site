@@ -11,17 +11,21 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { StorageService } from './services/storage.service';
 import { GeoLocationService } from './services/utils/geo-location.service';
 import { ApiHttpProvider, httpFactory } from './providers/api-http.provider';
+import { SearchService } from './services/search/search.service';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchInputComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full'},
+      { path: ':keyword', component: SearchResultComponent, pathMatch: 'full'},
       { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
       { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
     ]),
@@ -42,6 +46,7 @@ import { ApiHttpProvider, httpFactory } from './providers/api-http.provider';
     ApiHttpProvider,
     StorageService,
     GeoLocationService,
+    SearchService,
   ],
   bootstrap: [AppComponent]
 })
