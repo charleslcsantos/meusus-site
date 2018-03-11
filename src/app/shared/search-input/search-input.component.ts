@@ -11,16 +11,17 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchInputComponent implements OnInit {
-  public location = '';
+  public location = 'Todo Brasil';
   public searchTerm = '';
-  public cidade = '';
-  public results = [];
+  public availableCities = [];
 
   constructor(
     private geoLocationService: GeoLocationService,
     private searchService: SearchService,
     private route: Router
-  ) {
+  ) { }
+
+  ngOnInit() {
     this.geoLocationService.getBrowserLocation().subscribe((location) => {
       this.geoLocationService.location = location;
       this.geoLocationService.getLocationByLatLng(location.latitude, location.longitude).subscribe((res) => {
@@ -29,15 +30,13 @@ export class SearchInputComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
   /**
    * changeLocation
+   * Função para alterar a localização da consulta.
    */
   public changeLocation() {
-    if (this.cidade) {
-      this.results = this.searchService.search(this.cidade);
+    if (this.location) {
+      this.availableCities = this.geoLocationService.changeLocation(this.location);
     }
   }
 

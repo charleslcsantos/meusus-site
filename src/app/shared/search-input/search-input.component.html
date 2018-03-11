@@ -1,5 +1,13 @@
-<div class="search-input">
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Digite um serviço ou unidade" (keyup.enter)="search()">
-  <p>Buscar em: <input type="text" [(ngModel)]="cidade" (keyup.enter)="changeLocation()"></p>
+<div class="search-form">
+  <input type="text" class="input-term" name="term" [(ngModel)]="searchTerm" placeholder="Digite um serviço ou unidade" (keyup.enter)="search()">
+  <p>Buscar em: <a (click)="showInputLocation = true" *ngIf="!showInputLocation">{{location}} <i class="fa fa-caret-down"></i></a></p>
   <input type="submit" class="btn btn-primary" (click)="search()" value="Buscar">
+</div>
+
+<div class="overflow" *ngIf="showInputLocation" (click)="showInputLocation = false"></div>
+<div class="location-form" *ngIf="showInputLocation" >
+  <input type="text" class="input-location" [(ngModel)]="location" (keyup.enter)="changeLocation()">
+  <div class="location-items" *ngIf="availableCities.length > 0">
+    <a class="location-item" *ngFor="let city of availableCities" (click)="showInputLocation = false">{{city}}</a>
+  </div>
 </div>
