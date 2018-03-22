@@ -1,5 +1,8 @@
 <div class="search-form">
-  <input type="text" class="input-term" name="term" [(ngModel)]="searchTerm" placeholder="Digite um serviço ou unidade" (keyup.enter)="search()">
+  <div class="search-form__input">
+    <input type="text" class="input-term" name="term" [(ngModel)]="searchTerm" placeholder="Digite um serviço ou unidade" (keyup.enter)="search()">
+    <span class="required-field" *ngIf="showRequiredField">Você precisa digitar algo para iniciar a consulta</span>
+  </div>
   <p>Buscar em: <a (click)="showInputLocation = true" *ngIf="!showInputLocation">{{location}} <i class="fa fa-caret-down"></i></a></p>
   <input type="submit" class="btn btn-primary" (click)="search()" value="Buscar">
 </div>

@@ -17,7 +17,7 @@ export class StorageService {
 
     clear(key?: string): void {
         if (key) {
-            localStorage.removeItem(key)
+            localStorage.removeItem(key);
         } else {
             localStorage.clear();
         }

@@ -16,7 +16,7 @@ import { StorageService } from './../services/storage.service';
 @Injectable()
 export class ApiHttpProvider extends Http {
 
-    private isSecure: boolean = false;
+    private isSecure = false;
     private baseURL: string = environment.baseURL;
     private token: string;
 
@@ -25,7 +25,7 @@ export class ApiHttpProvider extends Http {
         defaultOptions: RequestOptions,
         private storage: StorageService
     ) {
-        super(backend, defaultOptions)
+        super(backend, defaultOptions);
     }
 
     secure(isSecure: boolean = true): ApiHttpProvider {
@@ -34,10 +34,11 @@ export class ApiHttpProvider extends Http {
     }
 
     makeurl(endpoint: any) {
-        let protocolPattern = /(http(s?))\:\/\//gi;
+        const protocolPattern = /(http(s?))\:\/\//gi;
 
-        if (protocolPattern.test(endpoint))
+        if (protocolPattern.test(endpoint)) {
             return endpoint;
+        }
 
         return `${this.baseURL}${endpoint}`;
     }

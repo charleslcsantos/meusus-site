@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 
 // Services
-import { SeoService } from "./seo.service";
+import { SeoService } from './seo.service';
 import { MetabaseService } from './metabase.service';
-import { TitleService } from "./title.service";
+import { TitleService } from './title.service';
 
 @NgModule({
 
     providers: [
         SeoService,
-        TitleService, 
+        TitleService,
         MetabaseService
     ]
 
 })
-export class SeoModule{}
+export class SeoModule {}

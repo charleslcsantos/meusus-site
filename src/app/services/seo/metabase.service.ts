@@ -1,7 +1,7 @@
 import { Injectable, RendererFactory2, Inject, ViewEncapsulation } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import { Meta } from "@angular/platform-browser";
-import { MetaBaseInfo } from "./seo.interface";
+import { Meta } from '@angular/platform-browser';
+import { MetaBaseInfo } from './seo.interface';
 import { AbsoluteUrlService } from '../utils/absoluteurl.service';
 
 
@@ -9,10 +9,10 @@ import { AbsoluteUrlService } from '../utils/absoluteurl.service';
 export class MetabaseService {
 
   private titleDefaults: MetaBaseInfo = {
-    description: "CREDUC - Crédito Educativo",
+    description: 'CREDUC - Crédito Educativo',
     follow: true,
     index: true
-  }
+  };
 
   constructor(
     private ngMeta: Meta,
@@ -39,7 +39,7 @@ export class MetabaseService {
       description = text.substring(0, 157) + '...';
     }
 
-    this.ngMeta.updateTag({ name: "description", content: description });
+    this.ngMeta.updateTag({ name: 'description', content: description });
   }
 
   setCanonical(link: string) {
@@ -50,7 +50,7 @@ export class MetabaseService {
         styles: [],
         data: {}
       });
-      const canonical = document.querySelector("link[rel='canonical']")
+      const canonical = document.querySelector('link[rel=\'canonical\']');
       const head = this.document.head;
 
       if (head === null) {
@@ -58,12 +58,12 @@ export class MetabaseService {
       }
 
       // if (!!canonical) {
-        
+
       //   this.absoluteUrl.getAbsoluteUrlFromPath(link).subscribe( url => {
       //     canonical.setAttribute('href', url);
       //   });
       // }
-      if(!!canonical){
+      if (!!canonical) {
         canonical.setAttribute('href', this.absoluteUrl.getAbsoluteUrl(link));
       }
     } catch (e) {
@@ -72,10 +72,10 @@ export class MetabaseService {
   }
 
   setRobots(index: boolean, follow: boolean) {
-    let text = "";
-    text += index ? "Index," : "NoIndex";
-    text += follow ? " Follow" : "NoFollow";
-    this.ngMeta.updateTag({ name: "robots", content: text });
+    let text = '';
+    text += index ? 'Index,' : 'NoIndex';
+    text += follow ? ' Follow' : 'NoFollow';
+    this.ngMeta.updateTag({ name: 'robots', content: text });
   }
 
 }

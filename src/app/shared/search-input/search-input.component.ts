@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class SearchInputComponent implements OnInit {
   public location = 'Todo Brasil';
   public searchTerm = '';
+  public showRequiredField = false;
   public availableCities = [];
 
   constructor(
@@ -44,8 +45,13 @@ export class SearchInputComponent implements OnInit {
    * search
    */
   public search() {
-    console.log(this.searchTerm);
-    this.route.navigate([`/${this.searchTerm}`]);
+    console.log(this.searchTerm.length);
+    if (this.searchTerm.length > 0) {
+      this.showRequiredField = false;
+      this.route.navigate([`/${this.searchTerm}`]);
+    } else {
+      this.showRequiredField = true;
+    }
   }
 
 }
