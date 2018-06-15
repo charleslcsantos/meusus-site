@@ -5,21 +5,3 @@
 	&:-ms-input-placeholder { @content; }
 	&::-webkit-input-placeholder { @content; }
 }
-
-@mixin min-desktop-size {
-	@media(min-width: $min_desktop_size) {
-		@content;
-	}
-}
-
-@mixin max-mobile-size {
-	@media(max-width: $max_mobile_size) {
-		@content;
-	}
-}
-
-@mixin min-tablet-size {
-	@media(min-width: $min_tablet_size) {
-		@content;
-	}
-}

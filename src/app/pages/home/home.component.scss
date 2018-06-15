@@ -1,14 +1,15 @@
 @import '../../../assets/styles/variables';
-@import '../../../assets/styles/mixins/helpers';
+@import '../../../assets/styles/mixins/responsive';
 
-.home-wrapper {
+.home-page {
+	position: relative;
 	display: flex;
 	width: 100%;
 	height: 100%;
 	padding: 0 20px;
 	text-align: center;
 	// background-image: url(/assets/images/bg.png);
-	background-size: contain;
+	// background-size: contain;
 	color: #4d5252;
 	justify-content: center;
 	align-items: center;
@@ -17,106 +18,115 @@
 	* {
 		transition: all .2s ease;
 	}
-	.header {
-		width: 80%;
-		max-width: 960px;
-		display: flex;
-		align-items: stretch;
-		position: absolute;
-		top: 0;
-		padding: 30px 0;
-		.navbar {
-			width: 100%;
-			ul {
-				text-align: right;
-				li {
-					list-style: none;
-					display: inline-block;
-					a {
-						text-decoration: none;
-						font-size: 14px;
-						font-weight: 600;
-						color: #8c8c8c;
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-				}
-			}
-		}
-	}
-	.content {
-		@include min-tablet-size {
-			width: 100%;
-		}
-		@include min-desktop-size {
-			max-width: 800px;
-			width: 100%;
-			margin-top: -15%;
-		}
-		.brand {
-			width: 80px;
-			margin: 0 auto;
-			text-align: center;
-			svg path {
-				fill: $color_primary;
-			}
-		}
-		h1 {
-			margin-bottom: 5px;
-			font-size: 17px;
-			@include min-tablet-size {
-				font-size: 24px;
-				margin-bottom: 15px;
-			}
-			@include min-desktop-size {
-				font-size: 30px;
-				margin-bottom: 20px;
-			}
-		}
-		h2 {
-			font-weight: 100;
-			font-size: 12px;
-			letter-spacing: 0.06em;
-			margin-top: 5px;
-			margin-bottom: 15px;
-			color: #a7a7a7;
-			@include min-tablet-size {
+}
+.header {
+	width: 80%;
+	max-width: 960px;
+	display: flex;
+	align-items: stretch;
+	position: absolute;
+	top: 0;
+	padding: 30px 0;
+}
+
+.navbar {
+	width: 100%;
+	ul {
+		text-align: right;
+		li {
+			list-style: none;
+			display: inline-block;
+			a {
+				text-decoration: none;
 				font-size: 14px;
-			}
-			@include min-desktop-size {
-				font-size: 16px;
-			}
-			strong {
-				display: block;
-				color: #848484;
-				@include min-desktop-size {
-					display: inline-block;
+				font-weight: 600;
+				color: #8c8c8c;
+				&:hover {
+					text-decoration: underline;
 				}
 			}
 		}
-		.search-form .input-term {
-			max-width: 300px;
-			margin: 0 auto;
+	}
+}
+
+.page__content {
+	top: 15vh;
+	position: absolute;
+	padding: 0 40px;
+	@include min-tablet-size {
+		width: 100%;
+	}
+	@include min-desktop-size {
+		max-width: 800px;
+		width: 100%;
+	}
+}
+
+.brand {
+	width: 80px;
+	margin: 0 auto;
+	text-align: center;
+	svg path {
+		fill: $color_primary;
+	}
+}
+
+.page__title {
+	margin-bottom: 5px;
+	font-size: 17px;
+	@include min-tablet-size {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+	@include min-desktop-size {
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+}
+
+.search-hint {
+	font-weight: 100;
+	font-size: 12px;
+	letter-spacing: 0.06em;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	color: #a7a7a7;
+	@include min-tablet-size {
+		font-size: 14px;
+	}
+	@include min-desktop-size {
+		font-size: 16px;
+	}
+	.search-hint__item {
+		display: block;
+		color: #848484;
+		@include min-desktop-size {
+			display: inline-block;
 		}
 	}
-	.bg-bottom {
-		background-image: url(/assets/images/bg-home.png);
-		background-size: contain;
-		background-position-x: center;
-		background-repeat: no-repeat;
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		z-index: -1;
-		opacity: .8;
-		@media (min-height: 600px) {	
-			background-position-y: 5px;
-			height: 25%;
-		}
-		@include min-desktop-size {
-			background-position-y: 10px;
-			height: 40%;
-		}
+}
+
+.search-form .input-term {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.bg-bottom {
+	background-image: url(/assets/images/bg-home.png);
+	background-size: contain;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	opacity: .8;
+	@media (min-height: 600px) {	
+		background-position-y: 5px;
+		height: 25%;
+	}
+	@include min-desktop-size-and('min-height: 800px') {
+		background-position-y: 10px;
+		height: 40%;
 	}
 }

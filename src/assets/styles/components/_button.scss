@@ -1,13 +1,13 @@
 @import '../variables';
 
-.btn {
+.button {
   border: none;
   padding: 10px 30px;
   border-radius: 50px;
   font-size: 12px;
   transition: all .3s ease;
   cursor: pointer;
-  &.btn-primary {
+  &.button_primary {
     background: $color_primary;
     color: #FFF;
     &:hover {
