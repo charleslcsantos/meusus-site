@@ -1,8 +1,12 @@
 @import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins/responsive';
 @import '../../../assets/styles/mixins/helpers';
 
 .search-form	{
 	font-size: 14px;
+	.input {
+		display: block;
+	}
 	.search-form__input {
 		.required-field {
 			background: #ffa3b8;
@@ -13,9 +17,6 @@
 			color: #ffffff;
 			font-size: 13px;
 		}
-	}
-	input {
-		display: block;
 	}
 	.input-term {
 		color: $color_primary;
@@ -37,7 +38,7 @@
 			// width: 400px;
 		}
 	}
-	p {
+	.search-form__location {
 		font-size: 12px;
 		margin: 20px 0;
 		a {
@@ -65,7 +66,7 @@
 			}
 		}
 	}
-	.btn {
+	.button {
 		font-size: 14px;
 		margin: 20px auto;
 		padding: 10px 40px;

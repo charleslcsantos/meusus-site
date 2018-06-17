@@ -1,12 +1,12 @@
-<div class="home-wrapper">
+<div class="page home-page">
     <div class="header">
         <div class="navbar">
             <ul>
-                <li><a href="javascript:;">Sobre o MeuSUS</a></li>
+                <li><a class="" href="javascript:;">Sobre o MeuSUS</a></li>
             </ul>
         </div>
     </div>
-    <div class="content">
+    <div class="page__content">
         <div class="brand">
             <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 640 480" style="enable-background:new 0 0 640 480;" xml:space="preserve">
@@ -64,9 +64,15 @@
                 </g>
             </svg>
         </div>
-        <h1>Busque por serviços e unidades disponibilizados pelo SUS</h1>
+        <h1 class="page__title">Busque por serviços e unidades disponibilizados pelo SUS</h1>
         <!-- <h1>Loren Ipsum</h1> -->
-        <h2>Tente por exemplo: <strong><a href="javascript:;" [routerLink]="['/fisioterapia']">fisioterapia</a>, <a href="javascript:;" [routerLink]="['/exame-de-sangue']">exame de sangue</a>, <a href="javascript:;" [routerLink]="['/mamografia']">mamografia</a></strong></h2>
+        <h2 class="search-hint">Tente por exemplo: 
+            <div class="search-hint__item">
+                <a class="search-hint__link" href="javascript:;">fisioterapia</a>, 
+                <a class="search-hint__link" href="javascript:;">exame de sangue</a>, 
+                <a class="search-hint__link" href="javascript:;">mamografia</a>
+            </div>
+        </h2>
         <div app-search-input></div>
 
 
