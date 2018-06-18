@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { GeoLocationService } from '../../services/utils/geo-location.service';
 import { SearchService } from '../../services/search/search.service';
 import { Router } from '@angular/router';
 
@@ -11,35 +10,15 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchInputComponent implements OnInit {
-  public location = 'Todo Brasil';
   public searchTerm = '';
   public showRequiredField = false;
-  public availableCities = [];
 
   constructor(
-    private geoLocationService: GeoLocationService,
     private searchService: SearchService,
     private route: Router
   ) { }
 
-  ngOnInit() {
-    this.geoLocationService.getBrowserLocation().subscribe((location) => {
-      this.geoLocationService.location = location;
-      this.geoLocationService.getLocationByLatLng(location.latitude, location.longitude).subscribe((res) => {
-        this.location = res;
-      });
-    });
-  }
-
-  /**
-   * changeLocation
-   * Função para alterar a localização da consulta.
-   */
-  public changeLocation() {
-    if (this.location) {
-      this.availableCities = this.geoLocationService.changeLocation(this.location);
-    }
-  }
+  ngOnInit() { }
 
   /**
    * search

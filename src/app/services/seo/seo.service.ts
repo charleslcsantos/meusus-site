@@ -11,10 +11,13 @@ export class SeoService {
 
     title: {
       fragment: '',
-      full: 'CREDUC - Crédito Educativo'
+      full: 'MeuSUS - O SUS mais perto de você'
     },
     metabase: {
-      description: 'Descrição do texto. Texto longo aqui, mas precisa conferir as regras de tamanho máximo aqui',
+      description: `Já pensou se existisse um app que reunisse todas as informações sobre serviços e unidades do SUS?
+                    O MeuSUS é um serviço que tem como objetivo disponibilizar para consulta,
+                    de forma fácil e prática, todos os serviços prestados pelo Sistema Único de Saúde (SUS).
+                    Esse é o MeuSUS. Alias, nosso SUS! :)`,
       index: true,
       follow: true
     }

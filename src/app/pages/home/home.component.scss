@@ -56,7 +56,6 @@
 .page__content {
 	top: 20vh;
 	position: absolute;
-	padding: 0 40px;
 	@include min-tablet-size {
 		width: 100%;
 	}
@@ -77,9 +76,11 @@
 }
 
 .page__title {
+	font-weight: 800;
 	margin-bottom: 5px;
 	font-size: 17px;
 	@include min-tablet-size {
+		font-weight: 100;
 		font-size: 24px;
 		margin-bottom: 25px;
 	}
@@ -90,10 +91,9 @@
 }
 
 .search-hint {
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 12px;
-	margin-top: 5px;
-	margin-bottom: 15px;
+	margin: 15px 0;
 	color: #a7a7a7;
 	@include min-desktop-size {
 		font-size: 13px;
@@ -106,21 +106,19 @@
 }
 .search-hint__link {
 	text-decoration: none;
-	color: #00B8CE;
+	display: inline-block;
+	color: $color_primary;
 	text-transform: capitalize;
-	font-weight: bold;
-	font-size: 14px;
-	&::after {
-		content: ', ';
-	}
-	&:last-child::after {
-		display: none;
-	}
+	font-size: 12px;
+	font-weight: 400;
+	padding: 2px 10px;
+	border-radius: 25px;
+	margin: 3px;
+	border: 1px solid #b9eaf0;
 	&:hover {
-		background: #00b8ce;
+		background: #6baab1;
 		color: #FFF;
 		padding: 5px 20px;
-		border-radius: 10px;
 		&::after {
 			display: none;
 		}

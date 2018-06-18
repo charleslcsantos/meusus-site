@@ -9,7 +9,7 @@ import { AbsoluteUrlService } from '../utils/absoluteurl.service';
 export class MetabaseService {
 
   private titleDefaults: MetaBaseInfo = {
-    description: 'CREDUC - Crédito Educativo',
+    description: 'MeuSUS - O SUS mais perto de você',
     follow: true,
     index: true
   };

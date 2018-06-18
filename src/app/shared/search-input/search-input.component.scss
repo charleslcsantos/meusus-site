@@ -38,16 +38,6 @@
 		font-size: 13px;
 	}
 }
-.search-form__location {
-	font-size: 12px;
-	margin: 20px 0;
-	.location-link {
-		letter-spacing: -0.03em;
-		font-weight: 800;
-		margin-left: 5px;
-		cursor: pointer;
-	}
-}
 
 .button {
 	font-size: 14px;
@@ -56,7 +46,7 @@
 	font-weight: 100;
 }
 
-.overflow {
+.overlay {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -65,17 +55,8 @@
 	left: 0;
 }
 
-.location-modal {
-	position: fixed;
-	top: 20%;
-	left: 0;
-	right: 0;
-	width: 450px;
-	margin: 0 auto;
-	background: white;
-	border-radius: 5px;
-	padding: 30px 5px;
-
+.modal_location {
+	max-width: 450px;
 	> .input {
 		text-align: center;
 		outline: 0;

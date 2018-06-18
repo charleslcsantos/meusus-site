@@ -8,7 +8,7 @@ export class TitleService {
   private titleDefaults: TitleInfo = {
     fragment: '',
     prefix: '',
-    suffix: ' | CREDUC'
+    suffix: ' | MeuSUS'
   };
 
   constructor(

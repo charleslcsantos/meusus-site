@@ -7,14 +7,15 @@
            (keyup.enter)="search()">
     <span class="required-field" *ngIf="showRequiredField">Você precisa digitar algo para iniciar a consulta</span>
   </div>
-  <p class="search-form__location">Buscar em: 
-    <a class="location-link" (click)="showInputLocation = true">{{location}} <i class="fa fa-caret-down"></i></a>
-  </p>
+  <app-select-location></app-select-location>
   <input type="submit" class="button button_primary" (click)="search()" value="Buscar">
 </form>
 
-<div class="overflow" *ngIf="showInputLocation" (click)="showInputLocation = false"></div>
-<div class="location-modal" *ngIf="showInputLocation" >
+<div class="overlay" *ngIf="showInputLocation" (click)="showInputLocation = false"></div>
+<div class="modal modal_location" *ngIf="showInputLocation" >
+  <div class="modal__header">
+    Digite a cidade que deseja buscar serviços e unidades
+  </div>
   <input type="text" class="input" [(ngModel)]="location" (keyup.enter)="changeLocation()">
   <div class="location-cities" *ngIf="availableCities.length > 0">
     <a class="location-city" *ngFor="let city of availableCities" (click)="showInputLocation = false">{{city}}</a>

@@ -1,10 +1,19 @@
+
+/* #Import bootstrap */
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/modal';
+
 @import 'variables';
 @import 'components/button';
+@import 'components/modal';
 
 
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+// @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 // @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,800');
-/* @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800'); */
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800');
 
 * {
 	box-sizing: border-box;
@@ -17,9 +26,9 @@ body {
 	margin: 0;
 	padding: 0;
 	p, a, h1, h2, h3, h4, h5, h6, input[type="text"], span {
-		font-family: 'PT Sans', sans-serif;
+		// font-family: 'PT Sans', sans-serif;
 		/* font-family: 'Poppins', sans-serif; */
-		/* font-family: 'Nunito', sans-serif; */
+		font-family: 'Nunito', sans-serif; 
 	}
 }
 ::selection {
