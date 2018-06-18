@@ -27,6 +27,8 @@ export class SelectLocationComponent implements OnInit {
   }
 
   openModalLocation() {
-    const modalRef = this.modalService.open(ModalLocationComponent, {windowClass: ' modal_location'});
+    const modalRef = this.modalService
+                         .open(ModalLocationComponent, {windowClass: ' modal_location'})
+                         .result.then( res => this.location = res );
   }
 }

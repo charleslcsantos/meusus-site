@@ -17,7 +17,8 @@
 	}
 }
 .location-cities {
-	width: 350px;
+	overflow: scroll;
+	height: 30vh;
 	margin: 0 auto;
 	border: 1px solid #dedede;
 	border-radius: 5px;

@@ -6,9 +6,9 @@
 </div>
 <div class="modal-body">
   <p>Digite a cidade que deseja buscar serviços e unidades</p>
-  <input type="text" class="input" [(ngModel)]="location" (keyup.enter)="changeLocation()">
+  <input type="text" class="input" [(ngModel)]="location" placeholder="Ex.: Salvador" (keyup.enter)="changeLocation()">
   <div class="location-cities" *ngIf="availableCities.length > 0">
-    <a class="location-city" *ngFor="let city of availableCities" (click)="activeModal.close()">{{city}}</a>
+    <a class="location-city" *ngFor="let city of availableCities" (click)="setLocation(city)">{{city}}</a>
   </div>
 </div>
 <div class="modal-footer"></div>

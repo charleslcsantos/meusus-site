@@ -8,7 +8,7 @@ import { GeoLocationService } from '../../../services/utils/geo-location.service
   styleUrls: ['./location.component.scss']
 })
 export class ModalLocationComponent implements OnInit {
-  public location = 'Todo Brasil';
+  public location;
   public availableCities = [];
 
   constructor(
@@ -22,6 +22,13 @@ export class ModalLocationComponent implements OnInit {
   changeLocation() {
     if (this.location) {
       this.availableCities = this.geoLocationService.changeLocation(this.location);
+    }
+  }
+
+  setLocation(selectedLocation) {
+    if (selectedLocation) {
+      this.location = selectedLocation;
+      this.activeModal.close(this.location);
     }
   }
 

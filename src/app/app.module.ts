@@ -20,10 +20,12 @@ import { MetabaseService } from './services/seo/metabase.service';
 import { AbsoluteUrlService } from './services/utils/absoluteurl.service';
 import { SelectLocationComponent } from './shared/select-location/select-location.component';
 import { ModalLocationComponent } from './shared/modals/location/location.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 const COMPONENTS = [
   AppComponent,
   HomeComponent,
+  HeaderComponent,
   SearchTermComponent,
   SearchResultComponent,
   SelectLocationComponent,
