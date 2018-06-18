@@ -37,21 +37,19 @@
 
 .navbar {
 	width: 100%;
-	ul {
-		text-align: right;
-		li {
-			list-style: none;
-			display: inline-block;
-			a {
-				text-decoration: none;
-				font-size: 14px;
-				font-weight: 600;
-				color: #8c8c8c;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
+	text-align: right;
+}
+.navbar__item {
+	list-style: none;
+	display: inline-block;
+}
+.navbar__link {
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 600;
+	color: #8c8c8c;
+	&:hover {
+		text-decoration: underline;
 	}
 }
 
