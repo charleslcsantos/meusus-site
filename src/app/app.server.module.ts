@@ -4,6 +4,7 @@ import {ModuleMapLoaderModule} from '@nguniversal/module-map-ngfactory-loader';
 
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import {AppComponent} from './app.component';
     // by the ServerModule from @angular/platform-server.
     AppModule,
     ServerModule,
+    RouterModule,
     ModuleMapLoaderModule,
     ServerTransferStateModule,
   ],

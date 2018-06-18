@@ -7,6 +7,11 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
+  hints = [
+    { name: 'Fisioterapia', url: 'fisioterapia' },
+    { name: 'Exame de sangue', url: 'exame-de-sangue' },
+    { name: 'Mamografia', url: 'mamografia' }
+  ];
 
   ngOnInit() {
 
