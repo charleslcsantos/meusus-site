@@ -1,12 +1,14 @@
 <div class="modal-header">
-  <h4 class="modal-title">Hi there!</h4>
+  <h4 class="modal-title">Localização</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">+</span>
   </button>
 </div>
 <div class="modal-body">
-  <p>Hello, Pilão!</p>
+  <p>Digite a cidade que deseja buscar serviços e unidades</p>
+  <input type="text" class="input" [(ngModel)]="location" (keyup.enter)="changeLocation()">
+  <div class="location-cities" *ngIf="availableCities.length > 0">
+    <a class="location-city" *ngFor="let city of availableCities" (click)="activeModal.close()">{{city}}</a>
+  </div>
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-</div>
+<div class="modal-footer"></div>

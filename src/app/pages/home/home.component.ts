@@ -10,7 +10,8 @@ export class HomeComponent implements OnInit {
   hints = [
     { name: 'Fisioterapia', url: 'fisioterapia' },
     { name: 'Exame de sangue', url: 'exame-de-sangue' },
-    { name: 'Mamografia', url: 'mamografia' }
+    { name: 'Mamografia', url: 'mamografia' },
+    { name: 'Raio X', url: 'raio-x' }
   ];
 
   ngOnInit() {

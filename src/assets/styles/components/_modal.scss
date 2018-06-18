@@ -12,7 +12,17 @@
 		border: none;
 		font-size: 30px;
 		font-weight: 100;
+		padding: 10px 20px;
+		position: absolute;
+		right: 20px;
 		transform: rotate(45deg);
+		cursor: pointer;
+	}
+	.modal-title {
+		line-height: 20px;
+		margin: 6px auto;
+		text-align: center;
+		width: 80%;
 	}
 }
 

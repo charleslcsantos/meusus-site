@@ -7,7 +7,7 @@ import { HttpModule, Http, XHRBackend, RequestOptions, ConnectionBackend} from '
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SearchInputComponent } from './shared/search-input/search-input.component';
+import { SearchTermComponent } from './shared/search-term/search-term.component';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { StorageService } from './services/storage.service';
 import { GeoLocationService } from './services/utils/geo-location.service';
@@ -24,7 +24,7 @@ import { ModalLocationComponent } from './shared/modals/location/location.compon
 const COMPONENTS = [
   AppComponent,
   HomeComponent,
-  SearchInputComponent,
+  SearchTermComponent,
   SearchResultComponent,
   SelectLocationComponent,
   ModalLocationComponent,

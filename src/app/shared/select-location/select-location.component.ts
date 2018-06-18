@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GeoLocationService } from '../../services/utils/geo-location.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLocationComponent } from '../modals/location/location.component';
@@ -7,10 +7,10 @@ import { ModalLocationComponent } from '../modals/location/location.component';
   selector: 'app-select-location',
   templateUrl: './select-location.component.html',
   styleUrls: ['./select-location.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SelectLocationComponent implements OnInit {
   public location = 'Todo Brasil';
-  public availableCities = [];
 
   constructor(
     private geoLocationService: GeoLocationService,
@@ -26,13 +26,7 @@ export class SelectLocationComponent implements OnInit {
     });
   }
 
-  changeLocation() {
-    if (this.location) {
-      this.availableCities = this.geoLocationService.changeLocation(this.location);
-    }
-  }
-
   openModalLocation() {
-    const modalRef = this.modalService.open(ModalLocationComponent);
+    const modalRef = this.modalService.open(ModalLocationComponent, {windowClass: ' modal_location'});
   }
 }

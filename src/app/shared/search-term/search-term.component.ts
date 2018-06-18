@@ -4,12 +4,12 @@ import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: '[app-search-input]',
-  templateUrl: './search-input.component.html',
-  styleUrls: ['./search-input.component.scss'],
+  selector: '[app-search-term]',
+  templateUrl: './search-term.component.html',
+  styleUrls: ['./search-term.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SearchInputComponent implements OnInit {
+export class SearchTermComponent implements OnInit {
   public searchTerm = '';
   public showRequiredField = false;
 

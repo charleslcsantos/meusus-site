@@ -54,37 +54,3 @@
 	top: 0;
 	left: 0;
 }
-
-.modal_location {
-	max-width: 450px;
-	> .input {
-		text-align: center;
-		outline: 0;
-		display: inline-block;
-		min-width: 250px;
-		font-weight: 800;
-		color: #48b9ce;
-		text-decoration: none;
-		margin: 0 auto;
-		border: none;
-		border-bottom: 1px solid;
-		padding: 0 15px 2px;
-		&:disabled {
-			border: none;
-			background: transparent;
-			width: 300px;
-		}
-	}
-	.location-cities {
-		width: 350px;
-    margin: 0 auto;
-    border: 1px solid #dedede;
-    border-radius: 5px;
-		padding: 5px 20px;
-		.location-city {
-			display: block;
-			padding: 10px 5px;
-			border-bottom: 1px dashed #dedede;
-		}
-	}
-}

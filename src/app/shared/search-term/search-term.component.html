@@ -1,0 +1,12 @@
+<form class="search-form">
+  <div class="search-form__input">
+    <input type="text" class="input" name="term"
+           placeholder="Digite um serviço ou unidade"
+           autofocus
+           [(ngModel)]="searchTerm"
+           (keyup.enter)="search()">
+    <span class="required-field" *ngIf="showRequiredField">Você precisa digitar algo para iniciar a consulta</span>
+  </div>
+  <app-select-location></app-select-location>
+  <input type="submit" class="button button_primary" (click)="search()" value="Buscar">
+</form>
