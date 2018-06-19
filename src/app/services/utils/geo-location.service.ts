@@ -15,7 +15,7 @@ import { cities } from '../../models/cities';
 export class GeoLocationService {
   private _location: Coordinates;
 
-  items = cities;
+  private _items = cities;
 
   get location() {
     return this._location;
@@ -23,6 +23,10 @@ export class GeoLocationService {
 
   set location(value: any) {
     this._location = value;
+  }
+
+  get items() {
+    return this._items;
   }
 
   constructor(
