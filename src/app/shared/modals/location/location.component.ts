@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { GeoLocationService } from '../../../services/utils/geo-location.service';
 
@@ -9,8 +10,8 @@ import { GeoLocationService } from '../../../services/utils/geo-location.service
   styleUrls: ['./location.component.scss']
 })
 export class ModalLocationComponent implements OnInit {
-  public location;
-  public availableCities;
+  location;
+  availableCities;
 
   constructor(
     private geoLocationService: GeoLocationService,
@@ -21,25 +22,37 @@ export class ModalLocationComponent implements OnInit {
   }
 
   public changeLocation = (text$: Observable<string>) => {
-    return text$
-    .debounceTime(200)
-    .distinctUntilChanged()
-    .map((term) => {
-      if (term.length === 0) {
+    return text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map((term) => {
+        if (term.length === 0) {
+          return this.availableCities;
+        }
+        if (term.length < 2) {
+          return [];
+        }
+        this.availableCities = [];
+        this.geoLocationService.items.estados.forEach(estado => {
+          estado.cidades.map(
+            (cidade) => {
+              if (new RegExp(term, 'gi').test(cidade)) {
+                this.availableCities.push({
+                  'cidade': cidade,
+                  'estado': estado.nome,
+                  'sigla' : estado.sigla
+                });
+              }
+          }
+          );
+        });
+        console.log(this.availableCities);
         return this.availableCities;
-      }
-      if (term.length < 2) {
-        return [];
-      }
-      this.availableCities = this.geoLocationService.items;
-      return this.availableCities.filter(
-        (v) => new RegExp(term, 'gi')
-        .test(v.nome_fantasia)
-      ).splice(0, 10);
-    });
+      })
+    );
   }
 
-  public formatCampusResult = (result) => result.nome_fantasia;
+  public formatLocationResult = (result) => `${result.cidade} - ${result.sigla}`;
 
   setLocation(selectedLocation) {
     if (selectedLocation) {

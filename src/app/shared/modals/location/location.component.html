@@ -6,14 +6,10 @@
 </div>
 <div class="modal-body">
   <p>Digite a cidade que deseja buscar serviços e unidades</p>
-  <input type="text" class="input" placeholder="Ex.: Salvador" autofocus
+  <input type="text" class="input" placeholder="Ex.: Salvador"
         [(ngModel)]="location"
-        (click)="onFocus($event)"
         [ngbTypeahead]="changeLocation"
         [inputFormatter]="formatLocationResult"
-        [resultFormatter]="formatLocationResult">
-  <div class="location-cities" *ngIf="availableCities.length > 0">
-    <a class="location-city" *ngFor="let city of availableCities" (click)="setLocation(city)">{{city}}</a>
-  </div>
+        [resultFormatter]="formatLocationResult" autofocus>
 </div>
 <div class="modal-footer"></div>

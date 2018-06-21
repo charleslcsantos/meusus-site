@@ -4,12 +4,12 @@ import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: '[app-search-term]',
-  templateUrl: './search-term.component.html',
-  styleUrls: ['./search-term.component.scss'],
+  selector: 'app-search-term-form',
+  templateUrl: './search-term-form.component.html',
+  styleUrls: ['./search-term-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SearchTermComponent implements OnInit {
+export class SearchTermFormComponent implements OnInit {
   public searchTerm = '';
   public showRequiredField = false;
 
@@ -24,7 +24,6 @@ export class SearchTermComponent implements OnInit {
    * search
    */
   public search() {
-    console.log(this.searchTerm.length);
     if (this.searchTerm.length > 0) {
       this.showRequiredField = false;
       this.route.navigate([`/${this.searchTerm}`]);

@@ -103,6 +103,15 @@
 	display: block;
 	color: #848484;
 	padding-top: 10px;
+	min-height: 80px;
+	@include min-desktop-size {
+		min-height: 50px;
+	}
+	&:hover {
+		.search-hint__link {
+			padding: 7px 20px;
+		}
+	}
 }
 .search-hint__link {
 	text-decoration: none;
@@ -118,7 +127,6 @@
 	&:hover {
 		background: #6baab1;
 		color: #FFF;
-		padding: 5px 20px;
 		&::after {
 			display: none;
 		}

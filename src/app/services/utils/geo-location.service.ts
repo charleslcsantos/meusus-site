@@ -60,7 +60,7 @@ export class GeoLocationService {
     }
   }
 
-  changeLocation(term: any) {
+  getLocationByName(term: any) {
     if (term.length < 2) {
         return [];
     }
@@ -72,7 +72,6 @@ export class GeoLocationService {
             }
         });
     });
-    console.log(result);
     return result;
   }
 }
