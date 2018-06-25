@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -7,7 +7,8 @@ import { GeoLocationService } from '../../../services/utils/geo-location.service
 @Component({
   selector: 'app-modal-location',
   templateUrl: './location.component.html',
-  styleUrls: ['./location.component.scss']
+  styleUrls: ['./location.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ModalLocationComponent implements OnInit {
   location;
@@ -46,17 +47,16 @@ export class ModalLocationComponent implements OnInit {
           }
           );
         });
-        console.log(this.availableCities);
-        return this.availableCities;
+        return this.availableCities.splice(0, 5);
       })
     );
   }
 
   public formatLocationResult = (result) => `${result.cidade} - ${result.sigla}`;
 
-  setLocation(selectedLocation) {
+  setLocation(selectedLocation?) {
     if (selectedLocation) {
-      this.location = selectedLocation;
+      this.location = `${selectedLocation.cidade} - ${selectedLocation.sigla}`;
       this.activeModal.close(this.location);
     }
   }

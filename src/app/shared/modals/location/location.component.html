@@ -6,10 +6,13 @@
 </div>
 <div class="modal-body">
   <p>Digite a cidade que deseja buscar serviços e unidades</p>
-  <input type="text" class="input" placeholder="Ex.: Salvador"
-        [(ngModel)]="location"
-        [ngbTypeahead]="changeLocation"
-        [inputFormatter]="formatLocationResult"
-        [resultFormatter]="formatLocationResult" autofocus>
+  <div class="typeahead">
+    <input type="text" class="typeahead__input" placeholder="Ex.: Salvador"
+          [(ngModel)]="location"
+          (selectItem)="setLocation($event.item)"
+          [ngbTypeahead]="changeLocation"
+          [inputFormatter]="formatLocationResult"
+          [resultFormatter]="formatLocationResult" autofocus>
+  </div>
 </div>
 <div class="modal-footer"></div>
