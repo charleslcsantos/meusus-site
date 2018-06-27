@@ -18,7 +18,7 @@
 		border: none;
 		width: 100%;
 		cursor: pointer;
-		&:hover {
+		&:hover, &.active {
 			background: $color_primary__hover;
 		}
 		.ngb-highlight {

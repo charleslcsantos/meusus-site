@@ -4,8 +4,6 @@ import { RequestOptions, URLSearchParams, Headers, Response } from '@angular/htt
 @Injectable()
 export class SearchService {
 
-    url = 'https://en.wikipedia.org/w/api.php';
-
     constructor(
     ) { }
 

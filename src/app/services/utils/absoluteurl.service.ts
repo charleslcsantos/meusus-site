@@ -40,7 +40,7 @@ export class AbsoluteUrlService  {
 
     return Observable.create((observer) => {
 
-      if (!!path == false) {
+      if (!!path === false) {
 
         this.currentUrl.subscribe((url) => {
           observer.next(this.baseURL + url);

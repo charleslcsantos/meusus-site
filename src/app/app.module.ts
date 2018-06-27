@@ -21,6 +21,7 @@ import { AbsoluteUrlService } from './services/utils/absoluteurl.service';
 import { SelectLocationComponent } from './shared/select-location/select-location.component';
 import { ModalLocationComponent } from './shared/modals/location/location.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { AppRouteModule } from './app-routes.component';
 
 const COMPONENTS = [
   AppComponent,
@@ -38,10 +39,8 @@ const COMPONENTS = [
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: ':keyword', component: SearchResultComponent, pathMatch: 'full'},
-    ]),
+    RouterModule,
+    AppRouteModule,
     HttpModule,
     NgbModule.forRoot(),
     TransferHttpCacheModule,
