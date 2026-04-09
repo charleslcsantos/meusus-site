@@ -1,0 +1,50 @@
+---
+/**
+ * Página de detalhe da unidade
+ * Rota dinâmica: /unidade/{id}
+ */
+
+export const prerender = false;
+
+import Layout from '@/layouts/Layout.astro';
+import UnitDetail from '@/components/UnitDetail';
+
+// Obtém o ID da URL
+const { id } = Astro.params;
+const unitId = id ? parseInt(id, 10) : 0;
+
+// Valida o ID
+const isValidId = !isNaN(unitId) && unitId > 0;
+---
+
+<Layout 
+  title={isValidId ? `Detalhes da Unidade - MeuSUS` : 'Unidade não encontrada - MeuSUS'}
+  description="Detalhes da unidade de saúde do SUS em Salvador."
+>
+  <div class="min-h-[calc(100vh-8rem)] bg-gray-50">
+    {isValidId ? (
+      <UnitDetail client:load unitId={unitId} />
+    ) : (
+      <div class="max-w-3xl mx-auto px-4 py-12">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
+          <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-red-500 text-2xl">!</span>
+          </div>
+          <h1 class="text-xl font-semibold text-gray-900 mb-2">
+            ID da unidade inválido
+          </h1>
+          <p class="text-gray-600 mb-6">
+            O identificador da unidade não é válido.
+          </p>
+          <a 
+            href="/"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white 
+                   font-medium rounded-lg hover:bg-teal-700 transition-colors"
+          >
+            Voltar para busca
+          </a>
+        </div>
+      </div>
+    )}
+  </div>
+</Layout>

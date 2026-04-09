@@ -1,0 +1,110 @@
+---
+/**
+ * Página inicial do MeuSUS
+ * Contém a busca principal e exemplos
+ */
+
+import Layout from '@/layouts/Layout.astro';
+import SearchBox from '@/components/SearchBox';
+import SearchExamples from '@/components/SearchExamples';
+import { Heart, Search, MapPin, Shield } from 'lucide-react';
+---
+
+<Layout 
+  title="MeuSUS - Encontre unidades de saúde em Salvador"
+  description="Busque unidades de saúde do SUS em Salvador de forma simples e inteligente. Encontre hospitais, postos de saúde, especialidades e serviços."
+>
+  <div class="min-h-[calc(100vh-8rem)] flex flex-col">
+    <!-- Hero Section -->
+    <section class="flex-1 flex flex-col items-center justify-center px-4 py-12 sm:py-16 lg:py-20">
+      <div class="w-full max-w-3xl mx-auto text-center">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 
+                    bg-teal-50 border border-teal-100 rounded-full">
+          <MapPin size={14} className="text-teal-600" />
+          <span class="text-sm text-teal-700 font-medium">Salvador, Bahia</span>
+        </div>
+        
+        <!-- Título -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          Encontre <span class="text-teal-600">unidades de saúde</span> do SUS
+        </h1>
+        
+        <!-- Subtítulo -->
+        <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+          Busque hospitais, postos de saúde e serviços usando palavras do dia a dia. 
+          É rápido, simples e gratuito.
+        </p>
+        
+        <!-- Busca -->
+        <div class="mb-4">
+          <SearchBox 
+            client:load 
+            placeholder="O que você precisa? (ex: pediatra, raio x, preventivo...)"
+          />
+        </div>
+        
+        <!-- Exemplos -->
+        <SearchExamples 
+          client:load 
+        />
+        
+      </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="bg-gray-50 border-t border-gray-100 py-12 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-xl font-semibold text-gray-900 text-center mb-8">
+          Como funciona
+        </h2>
+        
+        <div class="grid sm:grid-cols-3 gap-6">
+          <!-- Feature 1 -->
+          <div class="text-center p-4">
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <Search size={24} className="text-teal-600" />
+            </div>
+            <h3 class="font-medium text-gray-900 mb-2">Busque como fala</h3>
+            <p class="text-sm text-gray-600">
+              Use palavras do dia a dia. Nosso sistema entende o que você precisa.
+            </p>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="text-center p-4">
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <MapPin size={24} className="text-teal-600" />
+            </div>
+            <h3 class="font-medium text-gray-900 mb-2">Encontre unidades</h3>
+            <p class="text-sm text-gray-600">
+              Veja hospitais e postos de saúde que oferecem o serviço que você busca.
+            </p>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="text-center p-4">
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <Heart size={24} className="text-teal-600" />
+            </div>
+            <h3 class="font-medium text-gray-900 mb-2">Cuide da sua saúde</h3>
+            <p class="text-sm text-gray-600">
+              Acesse informações detalhadas e localize o atendimento que precisa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SUS Info -->
+    <section class="py-8 px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 text-sm text-gray-500">
+          <Shield size={16} />
+          <span>Dados públicos do Sistema Único de Saúde</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
