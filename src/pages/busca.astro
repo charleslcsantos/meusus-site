@@ -1,0 +1,21 @@
+---
+/**
+ * Página de resultados de busca
+ * Faz a chamada à API e exibe os resultados
+ */
+
+import Layout from '@/layouts/Layout.astro';
+import SearchResults from '@/components/SearchResults';
+
+// Pega o parâmetro da URL no servidor
+const query = Astro.url.searchParams.get('q') || '';
+---
+
+<Layout 
+  title={query ? `Resultados para "${query}" - MeuSUS` : 'Busca - MeuSUS'}
+  description="Resultados da busca por unidades de saúde do SUS em Salvador."
+>
+  <div class="min-h-[calc(100vh-8rem)] bg-gray-50">
+    <SearchResults client:load initialQuery={query} />
+  </div>
+</Layout>
